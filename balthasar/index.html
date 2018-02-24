@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
+    <link rel="icon" href="favicon.ico">
+
+    <title>BalthaSAR</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">BalthaSAR</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Carte</a></li>
+            <li><a href="#sources">Sources</a></li>
+            <li><a href="#utilisation">Utilisation</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+<div class="container">
+
+     <H1>BalthaSAR <img height="56px" src="logo128.png"></h1>
+	<p>Outil d'aide à la coordination ATC <-> Services de secours</p>
+	<hr/>
+	
+	ID de l'emplacement : <input type="text" name="id" id="id" />
+	<span id="id_info"><i>Code OACI ou VOR</i></span><br/>
+	QDR : <input type="number" id="qdr"/> - Distance (Nm) <input type="text" id="distance"/><br/>
+	<br/>
+	<a class="btn btn-primary btn-lg" href="javascript:compute()">Calculer</a><br/>
+	<br/>
+	<div id="result">
+		
+	</div>
+
+	<hr/>
+
+	<div id='map'></div>
+
+	<hr/>
+
+	
+
+	<div class="alert alert-warning" role="alert">
+  <strong>Attention !</strong> Cet outil ne fourni aucune garantie quant à la qualité des résultats donnés. Il est de la responsabilité de son utilisateur d'en vérifier la cohérence.
+</div>
+
+
+	<h2>Utilisation</h2>
+
+	<p>
+		Cet outil à été créé pour aider les services ATS à localiser facilement un évènement afin de la communquer facilement aux services de secours compétent. Le quadrillage affiché sur la carte correspond au caroyage DFCI utilisé par les services maritimes (CROSS...) et aussi par les services terrestres, notamment pour la lutte contre les incendies. Les coordonnées géographiques sont données en utilisant le modèle WGS84.
+	</p>
+
+	<h4>Précision</h4>
+
+	Le calcul se base sur une terre sphérique (bien qu'elle ne soit pas plate la terre a une forme géoïdale qui rend ce calcul approximatif). Plus il y a de la distance entre l'objet signalé et le moyen utilisé pour guider (aéroport ou VOR/NDB) plus la zone d'imprécision est grande.
+
+	<h2 id="sources">Sources : </h2>
+	<p>
+		Ce programme à pu voir le jour grâce aux sources suivantes : 
+	</p>
+	<ul>
+		<li>JQuery - <a href="https://jquery.com/">site</a></li>
+		<li>Bootstrap - <a href="https://getbootstrap.com/">site</a></li>
+		<li>Données aéroports et VOR : OpenAIP <a href="https://www.openaip.net">site</a></li>
+		<li>Quadrillage DFCI : <a href="https://geoservices.ign.fr/blog/2018/02/07/carroyages_DFCI.html">GéoServices IGN</a></li>
+		<li>Données fond de carte : <a href="https://www.openstreetmap.org/">Open Street Map</a></li>
+		<li>Carte : <a href="">Mapbox</a></li>
+		<li>Manipulations coordonnées <a href="https://github.com/chrisveness/geodesy">Github</a></li>
+	</ul>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+<script src="js/dms.js"></script>
+    <script src="js/latlon-spherical.js"></script>
+    <!--<script src="js/latlon-vincenty.js"></script>-->
+    
+    <script src="js/proj4.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
