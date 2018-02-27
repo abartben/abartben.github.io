@@ -75,12 +75,21 @@
 	<h2>Utilisation</h2>
 
 	<p>
-		Cet outil à été créé pour aider les services ATS à localiser facilement un évènement afin de la communquer facilement aux services de secours compétent. Le quadrillage affiché sur la carte correspond au caroyage DFCI utilisé par les services maritimes (CROSS...) et aussi par les services terrestres, notamment pour la lutte contre les incendies. Les coordonnées géographiques sont données en utilisant le modèle WGS84.
+		Cet outil à été créé pour aider les services ATS à localiser un évènement afin de la communiquer facilement aux services compétents. Le quadrillage affiché sur la carte correspond au caroyage DFCI utilisé par les services maritimes (CROSS...) et aussi par les services terrestres, notamment pour la lutte contre les incendies. Les coordonnées géographiques sont données en utilisant le modèle WGS84.
 	</p>
 
 	<h4>Précision</h4>
 
-	Le calcul se base sur une terre sphérique (bien qu'elle ne soit pas plate la terre a une forme géoïdale qui rend ce calcul approximatif). Plus il y a de la distance entre l'objet signalé et le moyen utilisé pour guider (aéroport ou VOR/NDB) plus la zone d'imprécision est grande.
+	Le calcul se base sur une terre sphérique (bien qu'elle ne soit pas plate la terre est d'une forme géoïdale qui rend ce calcul approximatif). Plus il y a de la distance entre l'objet signalé et le moyen utilisé pour guider (aéroport ou VOR/NDB) plus la zone d'imprécision est grande.<br/>
+	Rappel les positions affichées sur un radar (ou système de surveillance ATS pour les puristes) ne sont pas toujours précises !
+	
+	<p>
+		Pour se rendre compte de la précision locale des mesures, il est conseillé d'essayer sur des points VFR (les relèvement distances par rapport à un VOR sont toujours donnée sur les cartes VAC) et de comparer la différence entre position du point et du résultat donné.
+	</p>
+	
+	<p>
+		Les coordonnées géographiques des aéroports sont issues du site OpenAip (voir section <a href="#sources">sources</a>) et correspondent généralement au point de référence de l'aéroport. Les précisions est donc plus grande sur le point de départ en utilisant un VOR ou un NDB (car c'est un point précis).
+	</p>
 
 	<h2 id="sources">Sources : </h2>
 	<p>
@@ -94,6 +103,13 @@
 		<li>Données fond de carte : <a href="https://www.openstreetmap.org/">Open Street Map</a></li>
 		<li>Carte : <a href="">Mapbox</a></li>
 		<li>Manipulations coordonnées <a href="https://github.com/chrisveness/geodesy">Github</a></li>
+	</ul>
+	
+	<h2>Autres liens utiles : </h2>
+	
+	<ul>
+		<li>Informations sur le carroyage DFCI : <a href="http://www.entente-valabre.com/blog/224/51/retour-sur-le-carroyage-dfci">entente-valabre.com</a></li>
+		<li>Service Information Aéronautique français : <a href="https://www.sia.aviation-civile.gouv.fr/">SIA</a></li>
 	</ul>
 
     </div><!-- /.container -->
