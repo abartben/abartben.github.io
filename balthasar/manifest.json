@@ -1,0 +1,15 @@
+{
+  "short_name": "BalthaSAR",
+  "name": "BalthaSAR",
+  "icons": [
+    {
+      "src":"logo128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "index.php",
+  "background_color": "#4286f4",
+  "theme_color": "#4286f4",
+  "display": "fullscreen"
+}
