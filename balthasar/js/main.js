@@ -55,7 +55,7 @@ var ligne_geojson = {
 
 console.log("general kenobi")
 
-$("#id").keyup(function()
+$("#id").change(function()
 {
 	var val = $("#id").val();
 	val = val.toUpperCase();
@@ -192,10 +192,11 @@ $("#qdr").val("");
 
 });
 
-
 //faire le calcul quand la distance est changée en temps réel
-$("#distance").keyup(function()
+$("#distance").change(function()
 {
+
+
 	if( $("#distance").val().length > 0 && $("#qdr").val().length > 0)
 	{
 		compute();
@@ -203,10 +204,11 @@ $("#distance").keyup(function()
 
 	//on remplace l'éventuelle virgule par un point
 	$("#distance").val($("#distance").val().replace(",","."))
+
 });
 
 //faire le calcul quand le qdr est changé en temps réel
-$("#qdr").keyup(function()
+$("#qdr").change(function()
 {
 	if( $("#distance").val().length > 0 && $("#qdr").val().length > 0)
 	{

@@ -55,7 +55,7 @@
 	
 	ID de l'emplacement : <input type="text" name="id" id="id" />
 	<span id="id_info"><i>Code OACI ou VOR</i></span><br/>
-	QDR : <input type="number" id="qdr"/> - Distance (Nm) <input type="text" id="distance"/><br/>
+	QDR : <input type="number" step="1" id="qdr"/> - Distance (Nm) <input step="0.1" type="number" id="distance"/><br/>
 	<br/>
 	<a class="btn btn-primary btn-lg" href="javascript:compute()">Calculer</a><br/>
 	<br/>
@@ -84,8 +84,8 @@
 
 	<h4>Précision</h4>
 
-	Le calcul se base sur une terre sphérique (bien qu'elle ne soit pas plate la terre est d'une forme géoïdale qui rend ce calcul approximatif). Plus il y a de la distance entre l'objet signalé et le moyen utilisé pour guider (aéroport ou VOR/NDB) plus la zone d'imprécision est grande.<br/>
-	Rappel les positions affichées sur un radar (ou système de surveillance ATS pour les puristes) ne sont pas toujours précises !
+	La précision du calcul a été amélioré, cependant celà reste un calcul approxmiatif. Plus il y a de la distance entre l'objet signalé et le moyen utilisé pour guider (aéroport ou VOR/NDB) plus la zone d'imprécision est grande.<br/>
+	<strong>Rappel</strong> :  les positions affichées sur un radar (ou système de surveillance ATS pour les puristes) ne sont pas toujours précises !
 	
 	<p>
 		Pour se rendre compte de la précision locale des mesures, il est conseillé d'essayer sur des points VFR (les relèvement distances par rapport à un VOR sont toujours donnée sur les cartes VAC) et de comparer la différence entre position du point et du résultat donné.
@@ -115,6 +115,9 @@
 		<li>Informations sur le carroyage DFCI : <a href="http://www.entente-valabre.com/blog/224/51/retour-sur-le-carroyage-dfci">entente-valabre.com</a></li>
 		<li>Service Information Aéronautique français : <a href="https://www.sia.aviation-civile.gouv.fr/">SIA</a></li>
 	</ul>
+
+
+	<br/><hr/><br/>
 
     </div><!-- /.container -->
 
