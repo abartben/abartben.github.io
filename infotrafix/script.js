@@ -267,7 +267,7 @@ function new_position()
 
 	$("#avionA").css("top",Ax);
 	$("#avionA").css("left",Ay);
-	$("#avionA").attr("src","https://176.31.188.11/infotrafix/comete"+Aimg+".png");
+	$("#avionA").attr("src","https://11.ip-176-31-188.eu/infotrafix/comete"+Aimg+".png");
 	$("#avionA").css("transform","rotate("+Ar+"deg)");
 
 	$("#barreA").css("top",Ax+20);
@@ -279,7 +279,7 @@ function new_position()
 
 	$("#avionB").css("top",Bx);
 	$("#avionB").css("left",By);
-	$("#avionB").attr("src","https://176.31.188.11/infotrafix/comete"+Bimg+".png");
+	$("#avionB").attr("src","https://11.ip-176-31-188.eu/infotrafix/comete"+Bimg+".png");
 	$("#avionB").css("transform","rotate("+Br+"deg)");
 
 	$("#barreB").css("top",Bx+20);
