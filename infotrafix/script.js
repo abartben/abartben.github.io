@@ -16,10 +16,13 @@
 
 */
 
-var immat = [ "F-GXOK","F-GUVN","F-GUVQ","F-HAAD","N708AT","F-HNIZ","F-GIJP","F-GFYV","F-GIKS","F-HBCH","F-GNCH","G-EFNH","3AMTY","N36FD","OOWIU","GSCOR","F-HCAN"]
+//liste des immats VFR (contient des hélicos)
+var immat = [ "F-GXOK","F-GUVN","F-GUVQ","F-HAAD","N708AT","F-HNIZ","F-GIJP","F-GFYV","F-GIKS","F-HBCH","F-GNCH","G-EFNH","3AMTY","F-GDDH","OOWIU","GSCOR","F-HCAN"]
 
+//liste des immats Hélicos
 var immat_heli = ["F-HELI","F-HNEO","F-HFCO","F-HJTB","F-HJTD","3AMAX","F-HAGK","3AMMC","F-HAHG","F-HLNV","F-GVAH","3AMGU","VPCYS","F-GYLE","F-GGUN","M-PAPA"]
 
+//liste des immats IFR
 var immat_ifr = ["MOZ538","NJE-XB","XGO3MD","BKK26Z","MAKAL","PHJFS","MJSTA","XRO946","NJE97H","FHRSC","JFA6JF","3AMSR","N525GC","VTJ98MH","GAC6677","MOUSE"]
 
 
@@ -41,7 +44,7 @@ $(document).keypress(function(e) {
 function new_position()
 {
 
-	var nombre_cas = 10;
+	var nombre_cas = 12;
 
 	var cas = rand(1,nombre_cas+1);
 
@@ -59,13 +62,12 @@ function new_position()
 	var labelB = "@" + Frand()+"<br/>"+(9+rand(0,5))+"00-"+(6+rand(0,5));
 	
 	//variable debug à décommenter pour tester un seul cas
-	//cas=4;
+	cas = 12;
 
 
 	if(cas==1)
 	{
-		console.log("cas 1");
-		//N 
+		//départ Sortie Novembre et traffic sans contact
 
 		Ax = 40+rand(50,150);
 		Ay = 230;
@@ -83,14 +85,13 @@ function new_position()
 	}
 	else if(cas==2)
 	{
-		console.log("cas2");
-		//rattrapage WL
+		//rattrapage entre deux arrivées à WL
 		
-		//avion rattrapÃ©e plus avancÃ©
+		//avion rattrapé plus avancé
 		Ax = 230+rand(0,50);
 		Ay = 130+rand(0,150);
-		Ar = 75+rand(0,20);
-		Aimg = 6;
+		Ar = 80+rand(0,10);
+		Aimg = 6; //petite vitesse
 
 		Bx = 210+rand(0,20);
 		By = 100 + rand(0,40);
@@ -100,8 +101,7 @@ function new_position()
 	}
 	else if(cas==3)
 	{
-		console.log("cas3");
-		//croisement SW/DR
+		//croisement SW/DR stable
 
 		//avion sur DR vers SW
 		Ax = 580 + rand(0,80);
@@ -113,7 +113,7 @@ function new_position()
 		Bx = 520+rand(0,40);
 		By = 350+rand(0,60);
 		Br = 210 + rand(0,50);
-		Bimg = rand(3,7);
+		Bimg = 3;
 	}
 	else if(cas==4)
 	{
@@ -263,6 +263,29 @@ function new_position()
 		labelA = "@" + Frand()+"<br/>"+(19+rand(0,6))+ "00&#8600; "+(6+rand(0,6));
 		labelB = "<i>Arrivee EW</i><br/>@" + Frand()+"<br/>"+(21+rand(0,5))+"00&#8600; "+(8+rand(0,6));
 		
+	}
+	else if(cas==12)
+	{
+		//croisement SW/DR montée vs descente
+
+		//avion sur DR vers SW en descente
+		Ax = 580 + rand(0,80);
+		Ay = 180 + rand(0,70);
+		Ar = 70+rand(0,30);
+		Aimg = rand(3,7);
+
+		//avion sur SW vers DR en montée
+		Bx = 520+rand(0,40);
+		By = 350+rand(0,60);
+		Br = 210 + rand(0,50);
+		Bimg = 3;
+		
+		//base et écart différent pour varier les infos
+		var base = 10 + rand(0,8); //altitude de base entre 1000 et 1800ft 
+		var ecart = rand(0,2); //écart entre 0 et 200ft
+		
+		labelA = "@" + Frand()+"<br/>"+(base + ecart)+ "00&#8599; "+(6+rand(0,6));
+		labelB = "@" + Frand()+"<br/>"+(base)+"00&#8600; "+(8+rand(0,6));
 	}
 
 	$("#avionA").css("top",Ax);
