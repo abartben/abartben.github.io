@@ -288,7 +288,7 @@ function new_position()
 		labelB = "@" + Frand()+"<br/>"+(base)+"00&#8600; "+(8+rand(0,6));
 	}
 
-	angle(Ax,Ay,Bx,By)
+	alert("gisement : " + (angle(Ax,Ay,Bx,By)+Br))
 	
 	$("#avionA").css("top",Ax);
 	$("#avionA").css("left",Ay);
@@ -365,9 +365,8 @@ function angle(xa,ya,xb,yb)
 {
 	//retourne le cap pour aller d'un point A vers un point B
 	var angle = Math.atan((yb-ya)/(xb - xa))
-	angle = angle*180/Math.PI;
+	angle = -angle*180/Math.PI;
 	
-	alert(angle)
 	return(angle)
 }
 
