@@ -1,0 +1,65 @@
+body
+{
+	background-color : #bacbdc;
+	font-family : "Arial";
+}
+
+#game
+{
+	position: relative;
+}
+
+#avionA
+{
+	 top: 620;
+  	 left:220;
+   	 position:absolute;   
+	 width : 128px;
+	 transform: rotate(20deg);
+}
+
+#avionB
+{
+	 top: 40;
+  	 left:230;
+   	 position:absolute;   
+	 transform: rotate(224deg);
+}
+
+#barreA
+{
+	 top: 310;
+  	 left:130;
+   	 position:absolute;
+	 width : 64px;   
+	 /*transform: rotate(20deg);*/
+}
+
+#labelA
+{
+	 top: 310;
+  	 left:130;
+   	 position:absolute;
+	 color : #AAAAAA; 
+	 font-size : small;  
+	 /*transform: rotate(20deg);*/
+}
+
+#barreB
+{
+	 top: 310;
+  	 left:130;
+   	 position:absolute;
+	 width : 64px;   
+	 /*transform: rotate(20deg);*/
+}
+
+#labelB
+{
+	 top: 310;
+  	 left:130;
+   	 position:absolute;
+	 color : #AAAAAA; 
+	 font-size : small;  
+	 /*transform: rotate(20deg);*/
+}
