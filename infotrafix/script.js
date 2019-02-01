@@ -1,5 +1,5 @@
 /*
-	CoordonnÃ©es
+	Coordonnées
 
 	Point N : 40/230
 	Point EW : -20/450
@@ -282,7 +282,7 @@ function new_position()
 		
 		//base et écart différent pour varier les infos
 		var base = 10 + rand(0,8); //altitude de base entre 1000 et 1800ft 
-		var ecart = rand(0,2); //écart entre 0 et 200ft
+		var ecart = rand(1,4); //écart entre 0 et 200ft
 		
 		labelA = "@" + Frand()+"<br/>"+(base + ecart)+ "00&#8599; "+(6+rand(0,6));
 		labelB = "@" + Frand()+"<br/>"+(base)+"00&#8600; "+(8+rand(0,6));
