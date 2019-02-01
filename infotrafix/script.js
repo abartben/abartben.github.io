@@ -189,7 +189,7 @@ function new_position()
 
 		Bx = 280 + rand(0,40);
 		By = 430 + rand(0,60);
-		Br = 080 + rand(0,20);
+		Br = 80 + rand(0,20);
 		Bimg = 3;
 
 		labelA = "<b>MD</b><br/>@" + HeliRand()+"<br/>"+(4+rand(0,2))+ "00-"+(8+rand(0,4));
@@ -364,8 +364,7 @@ function dist(xa,ya,xb,yb)
 function angle(xa,ya,xb,yb)
 {
 	//retourne le cap pour aller d'un point A vers un point B
-	var angle = 0;
-	angle = Math.atan2((yb-ya)/(xb - xa))
+	var angle = Math.atan2((yb-ya)/(xb - xa))
 	angle = angle*180/Math.PI;
 	
 	console.log(angle)
