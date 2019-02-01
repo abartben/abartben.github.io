@@ -62,7 +62,7 @@ function new_position()
 	var labelB = "@" + Frand()+"<br/>"+(9+rand(0,5))+"00-"+(6+rand(0,5));
 	
 	//variable debug à décommenter pour tester un seul cas
-	cas = 12;
+	//cas = 12;
 
 
 	if(cas==1)
@@ -288,6 +288,8 @@ function new_position()
 		labelB = "@" + Frand()+"<br/>"+(base)+"00&#8600; "+(8+rand(0,6));
 	}
 
+	angle(Ax,Ay,Bx,By)
+	
 	$("#avionA").css("top",Ax);
 	$("#avionA").css("left",Ay);
 	$("#avionA").attr("src","https://11.ip-176-31-188.eu/infotrafix/comete"+Aimg+".png");
@@ -333,26 +335,41 @@ function rand_text(possible,nb)
 
 function Frand()
 {
+	//génère automatiquement une immat d'avion
 	return( immat[Math.floor( Math.random() * 15) ] );
 }
 
 function HeliRand()
 {
+	//génère automatiquement une immat hélico
 	return( immat_heli[Math.floor( Math.random() * 16) ] );
 }
 
 function IfrRand()
 {
+	//génère automatiquement une immat IFR
 	return( immat_ifr[Math.floor( Math.random() * 16) ] );
 }
 
 function dist(xa,ya,xb,yb)
 {
+	//donne la distance en Nautiques entre 2 points
 	var distance = Math.sqrt((xb-xa)*(xb-xa) + (yb-ya)*(yb-ya))/170*4
 	distance = distance*10;
 	distance = Math.round(distance);
 	distance = distance/10;
 	return(distance);
+}
+
+function angle(xa,ya,xb,yb)
+{
+	//retourne le cap pour aller d'un point A vers un point B
+	var angle = 0;
+	angle = Math.atan2((yb-ya)/(xb - xa))
+	angle = angle*180/Math.PI;
+	
+	console.log(angle)
+	return(angle)
 }
 
 function rand(a,b)
