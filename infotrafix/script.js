@@ -364,8 +364,9 @@ function dist(xa,ya,xb,yb)
 function angle(xa,ya,xb,yb)
 {
 	//retourne le cap pour aller d'un point A vers un point B
-	var angle = Math.atan((yb-ya)/(xb - xa))
-	angle = -angle*180/Math.PI;
+	var angle = Math.atan2(yb-ya,xb-xa)
+	angle = angle*180/Math.PI;
+	angle = Math.floor(angle);
 	
 	return(angle)
 }
