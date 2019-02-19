@@ -11,3 +11,8 @@ Infotrafix
 
 Infotrafix is a tool to help practive traffic informations pour ATC training at LFMD
 Access [here](https://abartben.github.io/infotrafix)
+
+Cap-ten
+======
+Simple tool to learn to give headings
+Acces [here](https://abartben.github.io/cap-ten)
