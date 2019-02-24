@@ -2,6 +2,7 @@ window.pas = 10 //pas possible en degrés
 window.first = true
 window.reponses = 0
 window.justes = 0
+window.precision = 0
 
 $(document).keypress(function(e) {
     if(e.which == 13)
@@ -28,17 +29,19 @@ function new_position()
         //si ce n'est pas la première on vérifie la réponse si elle est juste
         window.reponses = window.reponses + 1
         var result = ""
-        console.log(parseInt($("#cap").val()))
-        if(parseInt($("#cap").val()) == window.cap )
+        var reponse = parseInt($("#cap").val())
+        if( reponse == window.cap )
         {
-            result = "Bonne réponse ("+window.cap+")"
+            result = '<span class="green">Bonne réponse ('+window.cap+')</span>'
             window.justes = window.justes + 1
         }
         else
         {
-            result = "<b>Mauvaise réponse</b> -->" +window.cap
+            result = '<span class="red">Mauvaise réponse <s>'+reponse+'</s>->' +window.cap+"</span>"
+            window.precision = window.precision + Math.abs(reponse - window.cap)
         }
-        result = result + "<br/>" + window.justes+"/"+window.reponses
+        result = result + " " + window.justes+"/"+window.reponses+" "
+        result = result + "Taux juste : "+Math.floor(window.justes/window.reponses*1000)/10+"% - Précision : "+Math.floor(window.precision/window.reponses*10)/10 + "°"
         $("#reponse").html(result)
     }
     else{
@@ -108,6 +111,11 @@ function new_position()
 
 
 }
+
+//init when ready
+$(function() {
+    new_position();
+});
 
 /*
     FONCTIONS
