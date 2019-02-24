@@ -42,6 +42,7 @@ function new_position()
         }
         result = result + " " + window.justes+"/"+window.reponses+" "
         result = result + "Taux juste : "+Math.floor(window.justes/window.reponses*1000)/10+"% - Précision : "+Math.floor(window.precision/window.reponses*10)/10 + "°"
+        result = result + "- Erreur moyenne : "+Math.floor(window.precision/(window.reponses - window.justes)*10)/10 + "°"
         $("#reponse").html(result)
     }
     else{
