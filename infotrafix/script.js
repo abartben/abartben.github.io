@@ -288,7 +288,7 @@ function new_position()
 		labelB = "@" + Frand()+"<br/>"+(base)+"00&#8600; "+(8+rand(0,6));
 	}
 
-	alert("cap " + labelA + " vers " +labelB +"\n"+ (angle(Ax,Ay,Bx,By)))
+	//alert("cap " + labelA + " vers " +labelB +"\n"+ (angle(Ax,Ay,Bx,By)))
 	
 	$("#avionA").css("top",Ax);
 	$("#avionA").css("left",Ay);
